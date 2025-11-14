@@ -7,6 +7,8 @@ import Batches from './components/hod/Batches'
 import Subjects from './components/hod/Subjects'
 import Timetable from './components/hod/Timetable'
 import ComingSoon from './components/hod/ComingSoon'
+import StudentDashboard from './components/student/StudentDashboard'
+import StudentComingSoon from './components/student/StudentComingSoon'
 
 function HomePage() {
   const navigate = useNavigate()
@@ -64,7 +66,10 @@ function HomePage() {
 
         {/* Action Buttons */}
         <div className="flex justify-center gap-4 mt-12">
-          <button className="bg-white text-black px-8 py-3 border-2 border-black font-semibold hover:bg-black hover:text-white transition-colors">
+          <button 
+            onClick={() => navigate('/student-dashboard')}
+            className="bg-white text-black px-8 py-3 border-2 border-black font-semibold hover:bg-black hover:text-white transition-colors"
+          >
             Student Login
           </button>
           <button className="bg-white text-black px-8 py-3 border-2 border-black font-semibold hover:bg-black hover:text-white transition-colors">
@@ -103,6 +108,15 @@ function App() {
         <Route path="/hod-dashboard/attendance" element={<ComingSoon />} />
         <Route path="/hod-dashboard/assignments" element={<ComingSoon />} />
         <Route path="/hod-dashboard/announcements" element={<ComingSoon />} />
+        
+        {/* Student Dashboard Routes */}
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/student-dashboard/attendance" element={<StudentComingSoon />} />
+        <Route path="/student-dashboard/syllabus" element={<StudentComingSoon />} />
+        <Route path="/student-dashboard/assignments" element={<StudentComingSoon />} />
+        <Route path="/student-dashboard/notifications" element={<StudentComingSoon />} />
+        <Route path="/student-dashboard/circulars" element={<StudentComingSoon />} />
+        <Route path="/student-dashboard/events" element={<StudentComingSoon />} />
       </Routes>
     </Router>
   )

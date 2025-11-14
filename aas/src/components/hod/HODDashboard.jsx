@@ -8,6 +8,12 @@ function HODDashboard() {
     { number: 24, label: 'Subjects' }
   ]
 
+   const handleLogout = () => {
+    if (window.confirm('Are you sure you want to logout?')) {
+      // Navigate to home
+      window.location.href = '/'
+    }
+  }
   const managementCards = [
     { 
       icon: 'fa-user-graduate', 
@@ -61,17 +67,18 @@ function HODDashboard() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="bg-red-800 text-white py-1 px-8 border-b-2 border-red-900">
+      <div className="bg-white px-4 py-5    ">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold mb-1">HOD Dashboard</h1>
-            <h2 className="text-lg opacity-90">Department of Electrical Engineering</h2>
-          </div>
-          <Link to="/" className="bg-white text-red-800 border-2 border-white px-5 py-2 font-semibold hover:bg-red-800 hover:text-white transition-colors">
-            Back to Home
-          </Link>
+         <div > <h1 className="text-4xl font-bold text-red-700">Welcome, Saurabh Mani Tripathi</h1>
+          <h4 className='text-1xl font-semibold text-red-700'>HOD, Electrical Engineering Department</h4>
+         </div> <button 
+            onClick={handleLogout}
+            className="bg-red-600 text-white px-6 py-2 font-semibold hover:bg-red-700 transition-colors"
+          >
+            Logout
+          </button>
         </div>
-      </header>
+      </div>
 
       <main className="max-w-7xl mx-auto my-8 px-4">
         <section className="mb-12">
