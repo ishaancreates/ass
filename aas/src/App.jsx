@@ -2,6 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import './App.css'
 import HODDashboard from './components/hod/HODDashboard'
 import Students from './components/hod/Students'
+import Faculty from './components/hod/Faculty'
+import Batches from './components/hod/Batches'
+import Subjects from './components/hod/Subjects'
+import Timetable from './components/hod/Timetable'
 import ComingSoon from './components/hod/ComingSoon'
 
 function HomePage() {
@@ -92,12 +96,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/hod-dashboard" element={<HODDashboard />} />
         <Route path="/hod-dashboard/students" element={<Students />} />
-        <Route path="/hod-dashboard/faculty" element={<ComingSoon />} />
-        <Route path="/hod-dashboard/batches" element={<ComingSoon />} />
-        <Route path="/hod-dashboard/subjects" element={<ComingSoon />} />
+        <Route path="/hod-dashboard/faculty" element={<Faculty />} />
+        <Route path="/hod-dashboard/batches" element={<Batches />} />
+        <Route path="/hod-dashboard/subjects" element={<Subjects />} />
+        <Route path="/hod-dashboard/timetable" element={<Timetable />} />
         <Route path="/hod-dashboard/attendance" element={<ComingSoon />} />
         <Route path="/hod-dashboard/assignments" element={<ComingSoon />} />
-        <Route path="/hod-dashboard/timetable" element={<ComingSoon />} />
         <Route path="/hod-dashboard/announcements" element={<ComingSoon />} />
       </Routes>
     </Router>
